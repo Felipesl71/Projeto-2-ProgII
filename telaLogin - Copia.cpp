@@ -16,9 +16,37 @@
 #include <conio2.h>
 using namespace std;
 
-void Janela ( )
+void telalogin ( )
 {
-    int c, l;
+    int c, l,senha,log;
+    
+    //------------------------------------------------------------------------------
+    //DESENHO SIGAES
+    
+    textbackground(DARKGRAY);
+    textcolor(BLACK);
+    gotoxy(40,3);
+    printf("%c%c%c%c%c %c%c%c%c%c %c%c%c%c%c" , 201,205,205,205,187 , 201,205,203,205,187 , 201,205,205,205,187); // SIG linha 1
+    printf(" %c%c%c%c%c %c%c%c%c%c %c%c%c%c%c" , 201,205,205,205,187 , 201,205,205,205,205 , 201,205,205,205,187); // AES linha 1
+
+    gotoxy(40,4);
+    printf("%c       %c   %c     %c   %c %c     %c   ", 186,186,186,186,186,186,186); // SIGAES linha 2
+
+    gotoxy(40,5);
+    printf("%c%c%c%c%c   %c   %c  %c%c", 200,205,205,205,187 , 186 , 186 , 205,187); //SIG linha3
+    printf(" %c%c%c%c%c %c%c%c%c  %c%c%c%c%c", 204,205,205,205,185 , 204,205,205,205 , 200,205,205,205,187);//AES linha 3
+
+    gotoxy(40,6);
+    printf("    %c   %c   %c   %c %c   %c %c         %c", 186 , 186, 186 , 186, 186 , 186, 186 , 186); // SIGAES linha 4
+
+    gotoxy(40,7);
+    printf("%c%c%c%c%c %c%c%c%c%c %c%c%c%c%c", 200,205,205,205,188 , 200,205,202,205,188 , 200,205,205,205,188); //SIG linha 5
+    printf(" %c   %c %c%c%c%c%c %c%c%c%c%c", 200 , 188 , 200,205,205,205,205 , 200,205,205,205,188); //AES linha 5
+
+    gotoxy(40,8);
+    printf("Sistema Gerenciador de Auto Escola");
+
+
     //------------------------------------------------------------------------------
     //          LINHA DE CIMA E DE BAIXO (PRIMEIRA E ULTIMA)
     for ( c = 3; c <= 113 ; c++ )
@@ -35,7 +63,7 @@ void Janela ( )
     //------------------------------------------------------------------------------
     //           CANTOS DA MOLDURA
     textbackground(DARKGRAY);
-        textcolor(BLACK);
+    textcolor(BLACK);
     gotoxy ( 2 , 2 );
     printf ( "%c" , 201 );
     gotoxy ( 114 , 2 );
@@ -87,133 +115,32 @@ void Janela ( )
         printf ( "%c" , 205 );
     }
     //------------------------------------------------------------------------------
-}
-void botoes()
-{
-    int c, l;
+
     //------------------------------------------------------------------------------
-    //      LINHA DE CIMA DE DE BAIXO DO QUADRO DE LOGIN
+    //      ÁREA DE LOGIN
     for ( c = 5; c <= 27 ; c++ )
     {
-        textbackground(CYAN);
-        textcolor(BLACK);
-        gotoxy ( c + 40 , 14 );
-        printf ( "%c" , 205 );
-        gotoxy ( c + 40 , 16 );
-        printf ( "%c" , 205 );
+        textbackground(DARKGRAY);
 
         textcolor(WHITE);
-        textbackground(3);
         gotoxy ( 45 , 15 );
         printf ( "LOGIN:" );
+        scanf("%d",&log);
 
 
     //------------------------------------------------------------------------------
-    //      LINHA DE CIMA DE DE BAIXO DO QUADRO DE SENHA
+    //      ÁREA DE SENHA
 
-
-        //textbackground(CYAN);
-        textcolor(BLACK);
-        //system( "Color 3F" );
-        gotoxy ( c + 40 , 18 );
-        printf ( "%c" , 205 );
-        gotoxy ( c + 40 , 20 );
-        printf ( "%c" , 205 );
-        //textcolor(WHITE);
 
         textcolor(WHITE);
-        textbackground(3);
+        textbackground(DARKGRAY);
         gotoxy ( 45 , 19 );
         printf ( "SENHA: " );
+        scanf("%d",&log);
 
     }
 
-    //------------------------------------------------------------------------------
 
-    //------------------------------------------------------------------------------
-    //     CANTOS DE LOGIN
-    textbackground(CYAN);
-    textcolor(BLACK);
-    gotoxy ( 44 , 14 );
-    printf ( "%c" , 201 );
-    gotoxy ( 68 , 14 );
-    printf ( "%c" , 187 );
-    gotoxy ( 68 , 16 );
-    printf ( "%c" , 188 );
-    gotoxy ( 44 , 16 );
-    printf ( "%c" , 200 );
-    //------------------------------------------------------------------------------
-
-    //------------------------------------------------------------------------------
-    //     CANTOS DE SENHA
-    textbackground(CYAN);
-    textcolor(BLACK);
-    gotoxy ( 44 , 18 );
-    printf ( "%c" , 201 );
-    gotoxy ( 68 , 18 );
-    printf ( "%c" , 187 );
-    gotoxy ( 68 , 20 );
-    printf ( "%c" , 188 );
-    gotoxy ( 44 , 20 );
-    printf ( "%c" , 200 );
-    //------------------------------------------------------------------------------
-
-    //------------------------------------------------------------------------------
-    //     LINHAS LATERAIS DO QUADRO DE LOGIN
-    for ( l = 15; l <= 15 ; l++ )
-    {
-        //textbackground(CYAN);
-        textcolor(BLACK);
-        gotoxy ( 44 , l );
-        printf ( "%c" , 186 );
-
-        gotoxy ( 68 , l );
-        printf ( "%c" , 186 );
-    }
-    //------------------------------------------------------------------------------
-
-    //------------------------------------------------------------------------------
-    //     LINHAS LATERAIS DO QUADRO DE SENHA
-    for ( l = 19; l <= 19 ; l++ )
-    {
-        //textbackground(CYAN);
-        textcolor(BLACK);
-        gotoxy ( 44 , l );
-        printf ( "%c" , 186 );
-
-        gotoxy ( 68 , l );
-        printf ( "%c" , 186 );
-    }
-    //------------------------------------------------------------------------------
-}
-
-void logo()
-{
-    int c, l;
-
-
-    textbackground(DARKGRAY);
-    textcolor(BLACK);
-    gotoxy(40,3);
-    printf("%c%c%c%c%c %c%c%c%c%c %c%c%c%c%c" , 201,205,205,205,187 , 201,205,203,205,187 , 201,205,205,205,187); // SIG linha 1
-    printf(" %c%c%c%c%c %c%c%c%c%c %c%c%c%c%c" , 201,205,205,205,187 , 201,205,205,205,205 , 201,205,205,205,187); // AES linha 1
-
-    gotoxy(40,4);
-    printf("%c       %c   %c     %c   %c %c     %c   ", 186,186,186,186,186,186,186); // SIGAES linha 2
-
-    gotoxy(40,5);
-    printf("%c%c%c%c%c   %c   %c  %c%c", 200,205,205,205,187 , 186 , 186 , 205,187); //SIG linha3
-    printf(" %c%c%c%c%c %c%c%c%c  %c%c%c%c%c", 204,205,205,205,185 , 204,205,205,205 , 200,205,205,205,187);//AES linha 3
-
-    gotoxy(40,6);
-    printf("    %c   %c   %c   %c %c   %c %c         %c", 186 , 186, 186 , 186, 186 , 186, 186 , 186); // SIGAES linha 4
-
-    gotoxy(40,7);
-    printf("%c%c%c%c%c %c%c%c%c%c %c%c%c%c%c", 200,205,205,205,188 , 200,205,202,205,188 , 200,205,205,205,188); //SIG linha 5
-    printf(" %c   %c %c%c%c%c%c %c%c%c%c%c", 200 , 188 , 200,205,205,205,205 , 200,205,205,205,188); //AES linha 5
-
-    gotoxy(40,8);
-    printf("Sistema Gerenciador de Auto Escola");
 
 }
 
@@ -222,9 +149,9 @@ int main ( )
 {
 //system ( "cls" );
     system( "Color 80" );
-    botoes();
-    Janela();
-    logo();
+
+    telalogin();
+
 
 
     textcolor ( WHITE );
